@@ -18,8 +18,13 @@ headers = {
     "Content-Type": "application/json"
 }
 
+# 🔹 مسیر تست برای بررسی اجرای سرور
+@app.route("/", methods=["GET"])
+def home():
+    return "Bot is running!", 200
+
 # 🔹 دریافت پیام از تلگرام و پردازش
-@app.route(f"/{TOKEN_BOT_2}", methods=["POST"])
+@app.route("/webhook", methods=["POST"])  # 🔥 تغییر مسیر از `/TOKEN` به `/webhook`
 def webhook():
     data = request.get_json()
     
@@ -63,10 +68,6 @@ def get_messages(conversation_id):
     response = requests.get(url, headers=headers)
     return response.json() if response.ok else None
 
-# اجرای سرور
+# 🔹 اجرای سرور
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
-@app.route("/", methods=["GET"])
-def home():
-    return "Bot is running!", 200
+    app.run(host="0.0.0.0", port=8080)  # 🔥 تغییر پورت از 5000 به 8080
