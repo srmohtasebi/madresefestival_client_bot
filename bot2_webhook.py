@@ -3,7 +3,7 @@ import telegram
 from flask import Flask, request
 
 # 🔹 اطلاعات بات ۲ و متیس
-TOKEN_BOT_2 = "tpsg-mPgpjyrDBiFEW8dlzQ4e4Uve2oOfFvB"  # توکن API بات ۲ در تلگرام
+TOKEN_BOT_2 = "7310841062:AAEn9dWnRe4P0tvcNGKPETjsiz0yGdnILfU"  # توکن API بات ۲ در تلگرام
 API_METIS = "https://api.metisai.ir/api/v1"
 API_KEY = "tpsg-mPgpjyrDBiFEW8dlzQ4e4Uve2oOfFvB"
 BOT_ID = "86e25937-7a57-4238-aea1-d4af8bbd8fc4"
